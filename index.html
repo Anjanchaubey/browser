@@ -351,9 +351,11 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 6px 12px; /* capsule padding */
-            background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.04));
-            border-radius: 999px; /* fully rounded 'capsule' */
+            padding: 6px 12px;
+            /* capsule padding */
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.04));
+            border-radius: 999px;
+            /* fully rounded 'capsule' */
             transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
             text-decoration: none;
         }
@@ -361,8 +363,8 @@
         .ai-links a:hover,
         .ai-links a:focus {
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-            background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.06));
             outline: none;
         }
 
@@ -405,12 +407,16 @@
             justify-content: center;
             border-radius: 10px;
             background: var(--bg-secondary);
-            border: 1px solid rgba(0,0,0,0.06);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
             cursor: pointer;
         }
 
-        .sidebar-btn svg { width: 24px; height: 24px; display:block; }
+        .sidebar-btn svg {
+            width: 24px;
+            height: 24px;
+            display: block;
+        }
 
         /* Move theme button into sidebar — adjust visuals for smaller footprint */
         .theme-btn {
@@ -429,7 +435,10 @@
             transition: all 0.3s ease;
         }
 
-        .theme-btn svg { width: 18px; height: 18px; }
+        .theme-btn svg {
+            width: 18px;
+            height: 18px;
+        }
 
         /* Compact theme area inside sidebar */
         .sidebar-theme {
@@ -476,7 +485,9 @@
             cursor: pointer;
         }
 
-        .sidebar-open-themes:hover { background: rgba(0,0,0,0.03); }
+        .sidebar-open-themes:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
 
         /* Theme Switcher */
         .theme-btn {
@@ -652,6 +663,64 @@
             box-shadow: 0 0 10px var(--accent-glow);
         }
 
+        /* Help Button */
+        .help-btn {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1002;
+            font-size: 11px;
+            color: var(--accent);
+            opacity: 0.7;
+        }
+
+        .help-btn:hover {
+            opacity: 1;
+        }
+
+        .shortcuts-tooltip {
+            position: absolute;
+            bottom: 25px;
+            right: 0;
+            background: var(--bg);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            padding: 6px;
+            width: 150px;
+            display: none;
+            font-size: 10px;
+            color: var(--text-primary);
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .shortcuts-tooltip h4 {
+            margin: 0 0 4px 0;
+            color: var(--accent);
+            font-size: 10px;
+        }
+
+        .shortcuts-tooltip div {
+            margin: 1px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .shortcuts-tooltip kbd {
+            background: var(--bg-secondary);
+            padding: 1px 3px;
+            border-radius: 2px;
+            font-size: 9px;
+        }
+
         /* Responsive Design */
         @media (max-width:1024px) {
             .main-container {
@@ -707,101 +776,124 @@
             }
         }
 
-   .vega-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #111; /* dark background */
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
+        .vega-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background:antiquewhite;
+            /* dark background */
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
 
-    .vega-btn img {
-      width: 28px;
-      height: 28px;
-    }
+        .vega-btn img {
+            width: 28px;
+            height: 28px;
+        }
 
-    .vega-btn:hover {
-      background: #333;
-      transform: scale(1.05);
-    }
+        .vega-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
 
-    .vega-btn:active {
-      transform: scale(0.95);
-    }
+        .vega-btn:active {
+            transform: scale(0.95);
+        }
 
         /* Vega dropdown wrapper and menu */
-            .vega-wrapper { position: relative; display: inline-block; }
+        .vega-wrapper {
+            position: relative;
+            display: inline-block;
+        }
 
-            .vega-dropdown {
-                position: absolute;
-                bottom: calc(100% + 12px); /* show above the button (drop-up) */
-                right: 6px;
-                min-width: 220px;
-                background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-                backdrop-filter: blur(8px) saturate(120%);
-                -webkit-backdrop-filter: blur(8px) saturate(120%);
-                border-radius: 12px;
-                box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-                padding: 8px 6px;
-                display: none;
-                z-index: 1005;
-                border: 1px solid rgba(255,255,255,0.04);
-                transform-origin: bottom right;
-                transform: translateY(6px) scale(0.98);
-                opacity: 0;
-                transition: transform 220ms cubic-bezier(.2,.9,.25,1), opacity 180ms ease;
-            }
+        .vega-dropdown {
+            position: absolute;
+            bottom: calc(100% + 12px);
+            /* show above the button (drop-up) */
+            right: 6px;
+            min-width: 220px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            backdrop-filter: blur(8px) saturate(120%);
+            -webkit-backdrop-filter: blur(8px) saturate(120%);
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            padding: 8px 6px;
+            display: none;
+            z-index: 1005;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transform-origin: bottom right;
+            transform: translateY(6px) scale(0.98);
+            opacity: 0;
+            transition: transform 220ms cubic-bezier(.2, .9, .25, 1), opacity 180ms ease;
+        }
 
-            .vega-dropdown.open { display: block; transform: translateY(0) scale(1); opacity: 1; }
+        .vega-dropdown.open {
+            display: block;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
 
-            /* decorative arrow pointer */
-            .vega-dropdown::after {
-                content: '';
-                position: absolute;
-                bottom: -8px; /* points down to the button */
-                right: 18px;
-                width: 14px;
-                height: 14px;
-                background: inherit;
-                transform: rotate(45deg);
-                border-left: 1px solid rgba(255,255,255,0.02);
-                border-bottom: 1px solid rgba(255,255,255,0.02);
-                filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
-                z-index: -1;
-            }
+        /* decorative arrow pointer */
+        .vega-dropdown::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            /* points down to the button */
+            right: 18px;
+            width: 14px;
+            height: 14px;
+            background: inherit;
+            transform: rotate(45deg);
+            border-left: 1px solid rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+            z-index: -1;
+        }
 
-            .vega-item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                padding: 10px 12px;
-                color: var(--text-primary);
-                text-decoration: none;
-                border-radius: 10px;
-                font-weight: 600;
-                transition: background 160ms ease, color 160ms ease, transform 120ms ease;
-            }
+        .vega-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background 160ms ease, color 160ms ease, transform 120ms ease;
+        }
 
-            .vega-item svg { flex-shrink: 0; width: 18px; height: 18px; fill: var(--text-primary); opacity: 0.9; }
-            .vega-item .vega-label { display: inline-block; font-size: 13px; }
+        .vega-item svg {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            fill: var(--text-primary);
+            opacity: 0.9;
+        }
 
-            .vega-item + .vega-item { margin-top: 6px; }
+        .vega-item .vega-label {
+            display: inline-block;
+            font-size: 13px;
+        }
 
-            .vega-item:hover,
-            .vega-item:focus {
-                background: linear-gradient(90deg, rgba(254,229,44,0.12), rgba(255,255,255,0.02));
-                color: var(--accent);
-                transform: translateY(-2px);
-                outline: none;
-            }
+        .vega-item+.vega-item {
+            margin-top: 6px;
+        }
 
-            .vega-item:focus { box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
+        .vega-item:hover,
+        .vega-item:focus {
+            background: linear-gradient(90deg, rgba(254, 229, 44, 0.12), rgba(255, 255, 255, 0.02));
+            color: var(--accent);
+            transform: translateY(-2px);
+            outline: none;
+        }
 
+        .vega-item:focus {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
     </style>
 </head>
 
@@ -811,7 +903,17 @@
     <div id="sidebar" class="sidebar" aria-hidden="false">
         <button id="sidebar-btn" class="sidebar-btn" aria-label="Open sidebar">
             <!-- User-provided SVG (scaled into the button) -->
-            <svg viewBox="0 0 201.611 201.611" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000"><g><path style="fill:#010002;" d="M0,83.856h78.763V5.086H0V83.856z M70.256,13.6v61.753H8.514V13.6H70.256z"></path><path style="fill:#010002;" d="M122.833,5.086V195.14h78.778V5.086H122.833z M131.355,184.314V15.249h61.728v169.065H131.355z"></path><path style="fill:#010002;" d="M0,196.525h78.763v-78.771H0V196.525z M70.256,126.262v61.749H8.514v-61.749H70.256z"></path></g></svg>
+            <svg viewBox="0 0 201.611 201.611" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000">
+                <g>
+                    <path style="fill:#010002;"
+                        d="M0,83.856h78.763V5.086H0V83.856z M70.256,13.6v61.753H8.514V13.6H70.256z"></path>
+                    <path style="fill:#010002;"
+                        d="M122.833,5.086V195.14h78.778V5.086H122.833z M131.355,184.314V15.249h61.728v169.065H131.355z">
+                    </path>
+                    <path style="fill:#010002;"
+                        d="M0,196.525h78.763v-78.771H0V196.525z M70.256,126.262v61.749H8.514v-61.749H70.256z"></path>
+                </g>
+            </svg>
         </button>
         <div id="sidebar-panel" class="sidebar-panel" aria-hidden="true">
             <div class="sidebar-title">THE BATMAN</div>
@@ -870,14 +972,22 @@
                             <input type="text" class="search-input" placeholder="Search the web..." id="searchInput"
                                 autocomplete="off">
                             <!-- Replaced lens icon with provided Google Lens style SVG -->
-                            <svg id="lensIcon" class="lens-icon" xmlns:xlink="http://www.w3.org/1999/xlink" class="Gdd5U" focusable="false" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" width="24"  height="24" aria-hidden="true">
+                            <svg id="lensIcon" class="lens-icon" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                class="Gdd5U" focusable="false" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" aria-hidden="true">
                                 <rect fill="none" height="192" width="192"></rect>
                                 <g>
                                     <circle fill="#34A853" cx="144.07" cy="144" r="16"></circle>
                                     <circle fill="#4285F4" cx="96.07" cy="104" r="24"></circle>
-                                    <path fill="#EA4335" d="M24,135.2c0,18.11,14.69,32.8,32.8,32.8H96v-16l-40.1-0.1c-8.8,0-15.9-8.19-15.9-17.9v-18H24V135.2z"></path>
-                                    <path fill="#FBBC05" d="M168,72.8c0-18.11-14.69-32.8-32.8-32.8H116l20,16c8.8,0,16,8.29,16,18v30h16V72.8z"></path>
-                                    <path fill="#4285F4" d="M112,24l-32,0L68,40H56.8C38.69,40,24,54.69,24,72.8V92h16V74c0-9.71,7.2-18,16-18h80L112,24z"></path>
+                                    <path fill="#EA4335"
+                                        d="M24,135.2c0,18.11,14.69,32.8,32.8,32.8H96v-16l-40.1-0.1c-8.8,0-15.9-8.19-15.9-17.9v-18H24V135.2z">
+                                    </path>
+                                    <path fill="#FBBC05"
+                                        d="M168,72.8c0-18.11-14.69-32.8-32.8-32.8H116l20,16c8.8,0,16,8.29,16,18v30h16V72.8z">
+                                    </path>
+                                    <path fill="#4285F4"
+                                        d="M112,24l-32,0L68,40H56.8C38.69,40,24,54.69,24,72.8V92h16V74c0-9.71,7.2-18,16-18h80L112,24z">
+                                    </path>
                                 </g>
                             </svg>
                         </form>
@@ -891,7 +1001,7 @@
                 </div>
             </div>
             <div class="ai-links">
-                <a href="https://chat.openai.com/" target="_blank" title="ChatGPT">
+                <a id="ai-chatgpt" href="https://chat.openai.com/" target="_blank" title="ChatGPT">
 
                     <svg width="2500" height="2500" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: grey;"
                         stroke-width="1.5" class="h-6 w-6"
@@ -901,7 +1011,7 @@
                             d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835A9.964 9.964 0 0 0 18.306.5a10.079 10.079 0 0 0-9.614 6.977 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 7.516 3.35 10.078 10.078 0 0 0 9.617-6.981 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.243-11.813zM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496zm-16.106-6.88a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zM4.297 13.62A7.469 7.469 0 0 1 8.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.01L7.04 23.856a7.504 7.504 0 0 1-2.743-10.237zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .113-.01l8.052 4.648a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.65-1.132zm3.35-5.043a7.395 7.395 0 0 0-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zM16.071 18l4.33-2.501 4.332 2.5v5l-4.331 2.5-4.331-2.5V18z"
                             fill="currentColor" />
                     </svg> </a>
-                <a href="https://gemini.google.com/" target="_blank" title="Gemini">
+                <a id="ai-gemini" href="https://gemini.google.com/" target="_blank" title="Gemini">
 
                     <svg viewBox="0 0 28.01 28" xmlns="http://www.w3.org/2000/svg" width="2500" height="2499">
                         <radialGradient id="a" cx="-576.08" cy="491.7"
@@ -915,20 +1025,20 @@
                             d="M14 28c0-1.94-.37-3.76-1.12-5.46-.72-1.7-1.72-3.19-2.98-4.45s-2.74-2.25-4.44-2.97C3.76 14.37 1.94 14 0 14c1.94 0 3.76-.36 5.46-1.09 1.7-.75 3.19-1.75 4.44-3.01 1.26-1.26 2.25-2.74 2.98-4.44C13.63 3.76 14 1.94 14 0c0 1.94.36 3.76 1.09 5.46.75 1.7 1.75 3.19 3.01 4.44 1.26 1.26 2.74 2.26 4.45 3.01 1.7.72 3.52 1.09 5.46 1.09-1.94 0-3.76.37-5.46 1.12-1.7.72-3.19 1.71-4.45 2.97s-2.26 2.74-3.01 4.45A13.86 13.86 0 0 0 14 28z"
                             fill="url(#a)" />
                     </svg> </a>
-                <a href="https://www.perplexity.ai/" target="_blank" title="Perplexity">
+                <a id="ai-perplexity" href="https://www.perplexity.ai/" target="_blank" title="Perplexity">
 
                     <svg fill="currentColor" fill-rule="evenodd" height="1em" style="flex:none;line-height:1"
                         viewBox="1.5 0 21 24" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z" />
                     </svg> </a>
-                <a href="https://grok.x.ai/" target="_blank" title="Grok (X)">
+                <a id="ai-grok" href="https://grok.x.ai/" target="_blank" title="Grok (X)">
 
                     <svg height="2344" viewBox="0 1 48 46" width="2500" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="m18.542 30.532 15.956-11.776c.783-.576 1.902-.354 2.274.545 1.962 4.728 1.084 10.411-2.819 14.315-3.903 3.901-9.333 4.756-14.299 2.808l-5.423 2.511c7.778 5.315 17.224 4 23.125-1.903 4.682-4.679 6.131-11.058 4.775-16.812l.011.011c-1.966-8.452.482-11.829 5.501-18.735.116-.164.237-.33.357-.496l-6.602 6.599v-.022l-22.86 22.958m-3.29 2.857c-5.582-5.329-4.619-13.579.142-18.339 3.521-3.522 9.294-4.958 14.331-2.847l5.412-2.497c-.974-.704-2.224-1.46-3.659-1.994-6.478-2.666-14.238-1.34-19.505 3.922-5.065 5.064-6.659 12.851-3.924 19.496 2.044 4.965-1.307 8.48-4.682 12.023-1.199 1.255-2.396 2.514-3.363 3.844l15.241-13.608" />
                     </svg> </a>
-                <a href="https://chat.deepseek.com/" target="_blank" title="DeepSeek">
+                <a id="ai-deepseek" href="https://chat.deepseek.com/" target="_blank" title="DeepSeek">
 
                     <svg fill="none" height="1320" viewBox="3.771 6.973 23.993 17.652" width="2500"
                         xmlns="http://www.w3.org/2000/svg">
@@ -937,34 +1047,58 @@
                             fill="#4d6bfe" />
                     </svg> </a>
 
-                                        <div class="vega-wrapper">
-                                            <button id="vegaBtn" class="vega-btn" aria-haspopup="true" aria-expanded="false" aria-controls="vegaDropdown">
-                                                <img src="vega.svg" height="24px" width="24px" alt="Vega Logo">
-                                            </button>
-                                                                    <div id="vegaDropdown" class="vega-dropdown" role="menu" aria-labelledby="vegaBtn">
-                                                                        <a href="#" class="vega-item" data-href="https://vegamovies.hot/" role="menuitem" tabindex="0">
-                                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.08"/></svg>
-                                                                            <span class="vega-label">vegamovies</span>
-                                                                        </a>
-                                                                        <a href="#" class="vega-item" data-href="https://modlist.in/" role="menuitem" tabindex="0">
-                                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6h16v2H4zM4 10h16v8H4z" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.08"/></svg>
-                                                                            <span class="vega-label">moviesmod</span>
-                                                                        </a>
-                                                                        <a href="#" class="vega-item" data-href="https://olamovies.app/" role="menuitem" tabindex="0">
-                                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.08"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.2"/></svg>
-                                                                            <span class="vega-label">olamovies</span>
-                                                                        </a>
-                                                                        <a href="#" class="vega-item" data-href="https://www.google.com/search?q=filmyfly" role="menuitem" tabindex="0">
-                                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.2" fill="currentColor" opacity="0.08"/><path d="M8 11h8" stroke="currentColor" stroke-width="1.2"/></svg>
-                                                                            <span class="vega-label">filmyfly</span>
-                                                                        </a>
-                                                                    </div>
-                                        </div>
+                <div class="vega-wrapper">
+                    <button id="vegaBtn" class="vega-btn" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="vegaDropdown">
+                        <img src="vega.svg"  height="24px" width="24px"
+                            alt="Vega Logo">
+                    </button>
+                    <div id="vegaDropdown" class="vega-dropdown" role="menu" aria-labelledby="vegaBtn">
+                        <a id="vega-vegamovies" href="#" class="vega-item" data-href="https://vegamovies.hot/"
+                            role="menuitem" tabindex="0">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.2" fill="currentColor"
+                                    opacity="0.08" />
+                            </svg>
+                            <span class="vega-label">vegamovies</span>
+                        </a>
+                        <a id="vega-moviesmod" href="#" class="vega-item" data-href="https://modlist.in/"
+                            role="menuitem" tabindex="0">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 6h16v2H4zM4 10h16v8H4z" stroke="currentColor" stroke-width="1.2"
+                                    fill="currentColor" opacity="0.08" />
+                            </svg>
+                            <span class="vega-label">moviesmod</span>
+                        </a>
+                        <a id="vega-olamovies" href="#" class="vega-item" data-href="https://olamovies.app/"
+                            role="menuitem" tabindex="0">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.2"
+                                    fill="currentColor" opacity="0.08" />
+                                <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.2" />
+                            </svg>
+                            <span class="vega-label">olamovies</span>
+                        </a>
+                        <a id="vega-filmyfly" href="#" class="vega-item"
+                            data-href="https://www.google.com/search?q=filmyfly" role="menuitem" tabindex="0">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.2" fill="currentColor"
+                                    opacity="0.08" />
+                                <path d="M8 11h8" stroke="currentColor" stroke-width="1.2" />
+                            </svg>
+                            <span class="vega-label">filmyfly</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    
+
 
     <div id="theme-modal" class="theme-modal">
         <div class="theme-modal-content">
@@ -981,6 +1115,25 @@
                 <h3>Select Wallpaper</h3>
                 <div id="wallpaper-grid" class="wallpaper-grid"></div>
             </div>
+        </div>
+    </div>
+
+    <!-- Help Button -->
+    <div class="help-btn" id="helpBtn">?
+        <div class="shortcuts-tooltip" id="shortcutsTooltip">
+            <h4>Keyboard Shortcuts</h4>
+            <div><span>Search</span><kbd>/</kbd></div>
+            <div><span>ChatGPT</span><kbd>C</kbd></div>
+            <div><span>Gemini</span><kbd>G</kbd></div>
+            <div><span>Perplexity</span><kbd>P</kbd></div>
+            <div><span>Grok</span><kbd>K</kbd></div>
+            <div><span>DeepSeek</span><kbd>D</kbd></div>
+            <div><span>Vegamovies</span><kbd>V</kbd></div>
+            <div><span>Moviesmod</span><kbd>M</kbd></div>
+            <div><span>Olamovies</span><kbd>O</kbd></div>
+            <div><span>Filmyfly</span><kbd>F</kbd></div>
+            <div><span>Next Wallpaper</span><kbd>Space</kbd></div>
+            <div><span>Next Theme</span><kbd>Ctrl+Space</kbd></div>
         </div>
     </div>
 
@@ -1081,6 +1234,8 @@
             // Build wallpaper list from numbered files (wall1.jpg .. wall10.jpg).
             // Include `wallpaper.png` as the primary default option (project contains wallpaper.png).
             const wallpapers = ['wallpaper.png', ...Array.from({ length: 10 }, (_, i) => `wall${i + 1}.jpg`)];
+            // resolvedWallpapers will hold actual resolved URLs (populated by populateWallpaperGrid)
+            let resolvedWallpapers = [];
 
             // Helper: try to resolve an image URL by testing the given URL, and
             // if it fails attempt the alternate extension (.jpg <-> .png).
@@ -1173,6 +1328,8 @@
                 wallpaperGrid.innerHTML = '';
                 // Resolve all wallpaper sources in parallel for faster startup.
                 const resolvedList = await Promise.all(wallpapers.map(w => resolveImageUrl(w)));
+                // store resolved list for keyboard-driven cycling
+                resolvedWallpapers = resolvedList.map(r => r || null);
                 resolvedList.forEach((resolved, idx) => {
                     const src = resolved || PLACEHOLDER_DATA_URI;
                     const thumb = document.createElement('div');
@@ -1311,6 +1468,141 @@
                     });
                 });
             }
+
+            // Cycle to next wallpaper (Space key will trigger this)
+            async function cycleWallpaperNext() {
+                try {
+                    const currBg = getComputedStyle(wallpaperContainer).backgroundImage || '';
+                    const match = currBg.match(/url\((?:"|')?(.*?)(?:"|')?\)/);
+                    const currentUrl = match ? match[1] : '';
+
+                    let list = resolvedWallpapers && resolvedWallpapers.filter(Boolean).length ? resolvedWallpapers.map(u => u) : wallpapers.slice();
+
+                    // If list contains nulls, fallback to wallpapers
+                    if (!list || list.length === 0) list = wallpapers.slice();
+
+                    // find current index by exact match or by filename
+                    let idx = list.findIndex(u => u && currentUrl && (u === currentUrl || currentUrl.includes(u)));
+                    if (idx === -1) {
+                        // try matching by filename if currentUrl contains a known wallpaper name
+                        for (let i = 0; i < wallpapers.length; i++) {
+                            if (currentUrl && currentUrl.indexOf(wallpapers[i]) !== -1) { idx = i; break; }
+                        }
+                    }
+
+                    const nextIndex = (idx + 1) % (list.length || wallpapers.length);
+                    const candidate = (resolvedWallpapers && resolvedWallpapers[nextIndex]) || wallpapers[nextIndex];
+                    const resolved = await resolveImageUrl(candidate) || candidate || PLACEHOLDER_DATA_URI;
+                    applyWallpaper(resolved);
+                } catch (err) {
+                    console.error('Failed to cycle wallpaper', err);
+                }
+            }
+
+            // Cycle to next theme (Ctrl+Space or Meta+Space will trigger this)
+            function cycleThemeNext() {
+                try {
+                    const keys = Object.keys(themes);
+                    if (!keys.length) return;
+                    const idx = keys.indexOf(currentTheme);
+                    const next = keys[(idx + 1) % keys.length];
+                    applyTheme(next, isDarkMode ? 'dark' : 'light');
+                } catch (err) {
+                    console.error('Failed to cycle theme', err);
+                }
+            }
+
+            // --- Keyboard shortcuts ---
+            // '/' to focus search input
+            // c -> ChatGPT, g -> Gemini, p -> Perplexity, k -> Grok (use 'k' for Grok to avoid duplicate 'g'), d -> DeepSeek
+            // v -> vegamovies, m -> moviesmod, o -> olamovies, f -> filmyfly
+            document.addEventListener('keydown', (e) => {
+                // If Ctrl/Meta + Space => cycle theme
+                if ((e.ctrlKey || e.metaKey) && e.code === 'Space') {
+                    e.preventDefault();
+                    cycleThemeNext();
+                    return;
+                }
+                // Ignore when using modifier keys (except the Ctrl/Meta+Space handled above) or when typing in a text-like field
+                if (e.ctrlKey || e.metaKey || e.altKey) return;
+                const active = document.activeElement;
+                const tag = active && active.tagName ? active.tagName.toLowerCase() : null;
+                const editable = active && (active.isContentEditable || tag === 'input' || tag === 'textarea' || active.getAttribute('role') === 'textbox');
+                // '/' focuses search unless you're already typing somewhere
+                if (e.key === '/' && !editable) {
+                    e.preventDefault();
+                    const s = document.getElementById('searchInput');
+                    if (s) { s.focus(); s.select && s.select(); }
+                    return;
+                }
+
+                // If typing in a field, do not trigger shortcuts
+                if (editable) return;
+
+                // Space handling: use e.code to reliably detect the space key
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    cycleWallpaperNext();
+                    return;
+                }
+
+                const key = e.key.toLowerCase();
+                switch (key) {
+                    case 'c': {
+                        const a = document.getElementById('ai-chatgpt'); if (a) a.click(); break;
+                    }
+                    case 'g': {
+                        const a = document.getElementById('ai-gemini'); if (a) a.click(); break;
+                    }
+                    case 'p': {
+                        const a = document.getElementById('ai-perplexity'); if (a) a.click(); break;
+                    }
+                    case 'k': {
+                        const a = document.getElementById('ai-grok'); if (a) a.click(); break;
+                    }
+                    case 'd': {
+                        const a = document.getElementById('ai-deepseek'); if (a) a.click(); break;
+                    }
+                    case 'v': {
+                        const a = document.getElementById('vega-vegamovies'); if (a) a.click(); break;
+                    }
+                    case 'm': {
+                        const a = document.getElementById('vega-moviesmod'); if (a) a.click(); break;
+                    }
+                    case 'o': {
+                        const a = document.getElementById('vega-olamovies'); if (a) a.click(); break;
+                    }
+                    case 'f': {
+                        const a = document.getElementById('vega-filmyfly'); if (a) a.click(); break;
+                    }
+                }
+            });
+
+            // --- Help Button Logic ---
+            const helpBtn = document.getElementById('helpBtn');
+            const shortcutsTooltip = document.getElementById('shortcutsTooltip');
+            let tooltipVisible = false;
+
+            function showTooltip() {
+                shortcutsTooltip.style.display = 'block';
+                tooltipVisible = true;
+            }
+
+            function hideTooltip() {
+                shortcutsTooltip.style.display = 'none';
+                tooltipVisible = false;
+            }
+
+            helpBtn.addEventListener('mouseenter', showTooltip);
+            helpBtn.addEventListener('mouseleave', hideTooltip);
+            helpBtn.addEventListener('click', () => {
+                if (tooltipVisible) hideTooltip();
+                else showTooltip();
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!helpBtn.contains(e.target)) hideTooltip();
+            });
 
         })();
     </script>
