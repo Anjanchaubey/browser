@@ -282,27 +282,32 @@
             -moz-appearance: none;
             appearance: none;
             background-color: var(--bg-secondary);
-            border: 1px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             width: 48px;
             height: 48px;
-            border-radius: 50%;
+            border-radius: 12px;
             cursor: pointer;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 24px;
+            background-size: 20px;
             transition: all 0.3s ease;
             flex-shrink: 0;
-            box-shadow: 0 4px 15px var(--shadow-color);
-            text-indent: -9999px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            color: var(--text-primary);
+            font-size: 12px;
+            text-align: center;
+            padding: 0;
         }
 
-        .engine-select:hover,
-        .engine-select:focus {
+        .engine-select:hover {
             border-color: var(--accent);
+            background-color: var(--bg);
         }
 
         .engine-select:focus {
             outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(254, 229, 44, 0.2);
         }
 
         .suggestions-box {
@@ -994,9 +999,9 @@
                         <ul id="suggestions-box" class="suggestions-box"></ul>
                     </div>
                     <select class="engine-select" id="searchEngine">
-                        <option value="google">Google</option>
                         <option value="duckduckgo">DuckDuckGo</option>
-                        <option value="brave">brave</option>
+                        <option value="google">Google</option>
+                        <option value="brave">Brave</option>
                     </select>
                 </div>
             </div>
