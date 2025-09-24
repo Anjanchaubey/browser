@@ -1206,6 +1206,11 @@
             }
 
             document.addEventListener('click', (e) => { if (!searchContainer.contains(e.target)) { suggestionsBox.style.display = 'none'; } });
+            
+            // Auto-focus search on page load
+            window.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => document.getElementById('searchInput').focus(), 100);
+            });
             searchForm.addEventListener('submit', (e) => { e.preventDefault(); const q = searchInput.value; if (q.trim() === '') return; const b = searchUrls[searchEngine.value]; const u = b + encodeURIComponent(q); window.open(u, '_blank'); searchInput.value = ''; suggestionsBox.style.display = 'none'; });
 
             // --- Theme & Wallpaper Logic ---
@@ -1399,7 +1404,10 @@
                 const resolvedSaved = await resolveImageUrl(savedWallpaper);
                 applyWallpaper(resolvedSaved);
                 applyTheme(currentTheme, isDarkMode ? 'dark' : 'light');
-                window.addEventListener('load', () => setTimeout(startup, 40));
+                window.addEventListener('load', () => {
+                    setTimeout(startup, 40);
+                    document.getElementById('searchInput').focus();
+                });
             })();
 
             // --- Vega dropdown logic ---
